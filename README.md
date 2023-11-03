@@ -1,4 +1,3 @@
-GymBuddy
 Welcome to the GymBuddy app!
 
 Prerequisites:
