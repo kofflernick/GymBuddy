@@ -45,7 +45,9 @@ export default function TabLayout() {
         name="two"
         options={{
           title: "Chats",
-          tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="comment" color={color} />
+          ),
           headerRight: () => <InfoIconLink />,
         }}
       />
@@ -53,7 +55,9 @@ export default function TabLayout() {
         name="three"
         options={{
           title: "Reviews",
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="arrow-right" color={color} />
+          ),
           headerRight: () => <InfoIconLink />,
         }}
       />
@@ -61,7 +65,7 @@ export default function TabLayout() {
         name="four"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => <TabBarIcon name="bars" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
           headerRight: () => <InfoIconLink />,
         }}
       />
