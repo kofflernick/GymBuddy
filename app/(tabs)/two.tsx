@@ -6,7 +6,7 @@ export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../figma_statics/Insight.jpg")}
+        source={require("../figma_statics/Chats.jpg")}
         style={styles.image}
       />
     </View>

@@ -6,7 +6,7 @@ export default function TabFourScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../figma_statics/Video_Pause.jpg")}
+        source={require("../figma_statics/Profile.jpg")}
         style={styles.image}
       />
     </View>

@@ -6,7 +6,7 @@ export default function TabThreeScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../figma_statics/Fitness_Instructors.jpg")}
+        source={require("../figma_statics/Reviews.jpg")}
         style={styles.image}
       />
     </View>
