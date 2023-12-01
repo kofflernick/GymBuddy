@@ -1,10 +1,14 @@
-import { StyleSheet } from "react-native"
-import { Text, View } from "../../components/Themed"
+import React from "react"
+import { Image, StyleSheet } from "react-native"
+import { View } from "../../components/Themed"
 
 export default function TabThreeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Three</Text>
+      <Image
+        source={require("../figma_statics/Fitness_Instructors.jpg")}
+        style={styles.image}
+      />
     </View>
   )
 }
@@ -15,13 +19,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
+  image: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
   },
 })

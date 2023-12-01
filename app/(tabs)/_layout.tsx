@@ -1,8 +1,12 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome"
+import React, { useState } from "react"
 import { Link, Tabs } from "expo-router"
 import { Pressable, useColorScheme } from "react-native"
 import InfoIconLink from "../InfoIconLink"
 import Colors from "../../constants/Colors"
+import { Button } from "react-native"
+import { View } from "../../components/Themed"
+import LoginScreen from "../loginScreen"
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>["name"]
@@ -13,6 +17,15 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme()
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const handleLogin = () => {
+    setIsLoggedIn(true)
+  }
+
+  if (!isLoggedIn) {
+    return <LoginScreen onLogin={handleLogin} />
+  }
 
   return (
     <Tabs
@@ -23,39 +36,39 @@ export default function TabLayout() {
       <Tabs.Screen
         name="one"
         options={{
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Home",
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Insights",
+          tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} />,
           headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
         name="three"
         options={{
-          title: "Tab Three",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Trainers",
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
           headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
         name="four"
         options={{
-          title: "Tab Four",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Workouts",
+          tabBarIcon: ({ color }) => <TabBarIcon name="bars" color={color} />,
           headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
         name="five"
         options={{
-          title: "Tab Five",
+          title: "Settings",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => <InfoIconLink />,
         }}
