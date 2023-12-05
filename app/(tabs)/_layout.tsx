@@ -69,14 +69,6 @@ export default function TabLayout() {
           headerRight: () => <InfoIconLink />,
         }}
       />
-      {/* <Tabs.Screen
-        name="five"
-        options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => <InfoIconLink />,
-        }}
-      /> */}
     </Tabs>
   )
 }
