@@ -22,15 +22,26 @@ const chats: ChatItem[] = [
     id: "1",
     name: "Lisa",
     message: "Are you free this friday?",
-    image: require("../cat/HomeBuddiesNearby.jpg"),
+    image: require("../cat/gymGuy2.png"),
   },
   {
     id: "2",
-    name: "Xiaofeng",
+    name: "Colman",
     message: "I dont like Equinox",
-    image: require("../cat/HomeBuddiesNearby.jpg"),
+    image: require("../cat/gymGuy1.png"),
   },
-  // other chats to be added
+  {
+    id: "3",
+    name: "Zack",
+    message: "How does 3 sound?",
+    image: require("../cat/gymGuy3.png"),
+  },
+  {
+    id: "4",
+    name: "Marry",
+    message: "Sounds good!",
+    image: require("../cat/gymGuy4.png"),
+  },
 ]
 
 export default function TabTwoScreen() {
@@ -42,10 +53,10 @@ export default function TabTwoScreen() {
         <Text style={styles.chatMessage}>{item.message}</Text>
       </View>
       {/* Replace with the correct "chevron" */}
-      <Image
+      {/* <Image
         source={require("../cat/HomeBuddiesNearby.jpg")}
         style={styles.chevron}
-      />
+      /> */}
     </TouchableOpacity>
   )
 
@@ -97,7 +108,7 @@ const styles = StyleSheet.create({
   },
   chatMessage: {
     fontSize: 16,
-    color: "#ddd",
+    color: "#D0FD3E",
   },
   chevron: {
     width: 10,

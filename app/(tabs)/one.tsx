@@ -1,5 +1,6 @@
 import React from "react"
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native"
+import { LinearGradient } from "expo-linear-gradient"
 
 export default function TabOneScreen() {
   const handleTap = () => {
@@ -9,26 +10,29 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.greeting}>Hello Toma,</Text>
-      <Text style={styles.message}>
-        Your next scheduled workout is today at 1:00 PM EST @ Dodge (Columbia)
-      </Text>
-      <View style={styles.buddySection}>
+      <Text style={styles.message}>Your next scheduled workout is</Text>
+      <Text style={styles.message2}>today at 1:00 PM EST</Text>
+      <Text style={styles.message3}>@ Dodge (Columbia)</Text>
+      <View style={styles.buddyTitleAndStreak}>
         <Text style={styles.buddyTitle}>Your Buddy</Text>
-        <Image
-          source={require("../cat/HomeYourBuddy.jpg")}
-          style={styles.buddyImage}
-        />
-        <Text style={styles.time}>01:00 - 02:00 PM</Text>
         <Text style={styles.streak}>Streak x10</Text>
       </View>
-      <TouchableOpacity style={styles.nearbySection} onPress={handleTap}>
-        <Text style={styles.nearbyTitle}>Buddies Nearby</Text>
+      <LinearGradient
+        colors={["#D0FD3E", "#000000"]}
+        style={styles.buddyCard}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
         <Image
-          source={require("../cat/HomeBuddiesNearby.jpg")}
-          style={styles.nearbyImage}
+          source={require("../cat/gymGuy1.png")}
+          style={styles.buddyImage}
         />
-        <Text style={styles.tapAction}>Tap To See Buddies Near You</Text>
-      </TouchableOpacity>
+        <Text style={styles.buddyTime}>01:00 - 02:00 PM</Text>
+      </LinearGradient>
+      <View style={styles.buddyTitleAndSkip}>
+        <Text style={styles.buddyTitle}>Colman Leung</Text>
+        <Text style={styles.streak}>Skip?</Text>
+      </View>
     </View>
   )
 }
@@ -36,8 +40,9 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 15,
     backgroundColor: "#1C1C1E",
+    justifyContent: "space-between",
   },
   greeting: {
     fontSize: 32,
@@ -47,54 +52,62 @@ const styles = StyleSheet.create({
   message: {
     fontSize: 18,
     color: "#D9D9D9",
-    marginVertical: 10,
+    marginTop: 25,
+    marginVertical: 5,
+    textAlign: "center",
   },
-  buddySection: {
+  message2: {
+    fontSize: 18,
+    color: "#DFF898",
+    // marginVertical: 5,
+    textAlign: "center",
+  },
+  message3: {
+    fontSize: 18,
+    color: "#D0FD3E",
+    marginBottom: 5,
+    textAlign: "center",
+  },
+  buddyTitleAndStreak: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#4e9525",
-    padding: 10,
-    borderRadius: 10,
-    marginVertical: 10,
+    width: "100%",
   },
   buddyTitle: {
-    fontSize: 24,
+    fontSize: 20,
     color: "#D9D9D9",
-    marginBottom: 10,
-  },
-  buddyImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    marginBottom: 10,
-  },
-  time: {
-    fontSize: 18,
-    color: "#D9D9D9",
+    fontWeight: "bold",
   },
   streak: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#ffd700",
+    fontSize: 12,
+    color: "#D0FD3E",
   },
-  nearbySection: {
+  buddyCard: {
     alignItems: "center",
+    justifyContent: "center",
     padding: 10,
+    borderRadius: 15,
     marginVertical: 10,
+    height: "50%",
   },
-  nearbyTitle: {
-    fontSize: 24,
-    color: "#D9D9D9",
+  buddyImage: {
+    width: "50%",
+    height: "60%",
+    borderRadius: 60,
     marginBottom: 10,
   },
-  nearbyImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    marginBottom: 10,
-  },
-  tapAction: {
+  buddyTime: {
     fontSize: 18,
-    color: "#D9D9D9",
-    textDecorationLine: "underline",
+    color: "#D0FD3E",
+    position: "absolute",
+    bottom: 10,
+    left: 10,
+  },
+  buddyTitleAndSkip: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
   },
 })

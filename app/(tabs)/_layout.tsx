@@ -38,7 +38,6 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-          headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
@@ -48,7 +47,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="comment" color={color} />
           ),
-          headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
@@ -58,7 +56,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="arrow-right" color={color} />
           ),
-          headerRight: () => <InfoIconLink />,
         }}
       />
       <Tabs.Screen
@@ -66,7 +63,6 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
-          headerRight: () => <InfoIconLink />,
         }}
       />
     </Tabs>
